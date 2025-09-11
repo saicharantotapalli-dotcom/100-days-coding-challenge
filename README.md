@@ -1,4 +1,6 @@
 Household Energy Consumption Analysis
+
+
 📌 Project Overview
 This project analyzes household-level data (family size, income, appliances, electricity/gas usage, etc.) to understand energy consumption patterns. The main objective is to discover how family size, income, and appliance count affect electricity/gas usage, and to identify per-person consumption, income-adjusted burden, seasonal variations, and the highest users.
 
