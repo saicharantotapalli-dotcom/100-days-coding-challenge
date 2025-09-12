@@ -1,0 +1,119 @@
+📌 Project Overview	
+	
+This project analyzes how screen time impacts student academic performance and lifestyle habits using a sample dataset.	
+The dataset includes information about study hours, screen time, test scores, extracurricular activities, and age.	
+	
+The objective is to identify patterns and correlations to help education departments design policies for balanced technology use.	
+	
+	
+	
+📂 Dataset Details	
+	
+Column Name	Description
+Student_ID	Unique identifier for each student
+Age	Age of the student
+Study_Hours	Average daily hours spent studying
+Screen_Time	Average daily screen time in hours
+Test_Scores	Academic test score (0–100)
+Extra_Curricular_Hours	Average daily time spent on extracurricular activities
+	
+	
+📝 Project Workflow	
+	
+1. Data Cleaning	
+	
+Removed duplicate records based on Student_ID.	
+	
+Filled missing values using median imputation:	
+	
+Study Hours → 2.5	
+	
+Screen Time → 4.1	
+	
+Test Scores → 71.6	
+	
+Standardized formatting for numerical fields.	
+	
+2. Data Transformation	
+	
+Added new calculated columns for deeper analysis:	
+	
+Column	Formula
+Screen_Time_Category	=IF(D3>6,"6+ hrs",IF(D3>=4.1,"4-6 hrs","<=4 hrs"))
+High_Screen_Flag	=IF(D3>6,"2",IF(D3>=4.1,"1","0"))
+Age_Group	=IF(B3>15,"16-17",IF(B3>=14,"14-15","<14"))
+	
+	
+3. Pivot Tables	
+	
+Created pivot tables for key insights:	
+	
+Average Test Scores by Screen Time Category	
+Screen Time vs Extracurricular Activity Trends	
+Age Group-wise Study and Screen Patterns	
+	
+	
+4. Visualizations	
+	
+Visualizations were built:	
+	
+Pie Chart: Study hours	
+	
+Bar Chart: Average Test Scores by Screen Time Category	
+	
+Column Chart: Time Category test Score	
+	
+📊 Insights & Observations	
+	
+Key Findings:	
+	
+Students with >4 hours of screen time scored ~12% lower on average than those with moderate screen time.	
+	
+Very high screen time (>6 hrs/day) showed a strong negative correlation with test scores.	
+	
+Students with more extracurricular activity time tended to have higher test scores.	
+	
+Age group 14–15 years showed the highest average study hours and better balance between screen time and study.	
+	
+	
+	
+Sample Size Analysis	
+	
+To calculate total students and group-wise counts:	
+	
+Overall Count:	
+0	
+	
+By Category:	
+Using Pivot Table → Values → Count of Student_ID	
+	
+Example breakdown:	
+	
+Screen Time Category	Count of Student_ID
+<=4 hrs	101
+4-6 hrs	77
+6+ hrs	22
+Grand Total	200
+	
+📁 Files in This Repository	
+	
+File Name	Description
+student_screen_time_raw.csv	Original raw dataset
+student_screen_time_cleaned.xlsx	Cleaned and transformed dataset
+Educational_Analytics_Dashboard.png	Dashboard mockup image
+README.md	Project documentation
+	
+	
+🖥️ Dashboard Layout	
+	
+The Excel dashboard includes:	
+	
+Top Section: KPIs	
+	
+Left Section: Pivot table summaries and slicers for filtering by age group.	
+	
+Middle Section: –Pie chart(Avg Study Hrs).	
+	
+Right Section: – Average Test Score, Average Screen Time.	
+	
+Bottom Section: Bar chart (Average Test Scores by Screen Time Category).	
