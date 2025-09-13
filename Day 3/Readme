@@ -1,0 +1,133 @@
+Healthy Kids Nutrition & Growth Analysis
+
+Overview
+
+This project analyzes the relationship between children's dietary habits and their physical development (BMI) using a realistic dataset.
+The goal is to identify trends and correlations to inform public health campaigns and interventions.
+
+Dataset
+
+File: Child_Health_Data.csv
+
+Columns:
+
+ChildID — Unique identifier for each child
+
+Age_Months — Age in months (24–60 months)
+
+Gender — Male/Female
+
+Height_cm — Height in centimeters
+
+Weight_kg — Weight in kilograms
+
+Daily_Fruit_Servings — Average daily fruit servings
+
+Daily_Veggie_Servings — Average daily vegetable servings
+
+Daily_Sugar_Drinks — Average daily sugary drinks
+
+ScreenTime_Hours — Average daily screen time in hours
+
+Region — Geographic region of residence
+
+Analysis Steps
+1. Data Cleaning
+
+Converted raw data into a clean table format.
+
+Added calculated columns:
+
+BMI = Weight (kg) / (Height (cm) / 100)²
+
+Health_Status classification:
+
+Underweight → BMI < 18.5
+
+Healthy Weight → 18.5 ≤ BMI < 25.0
+
+Overweight → 25.0 ≤ BMI < 30.0
+
+Obese → BMI ≥ 30.0
+
+Added Age_Group buckets:
+
+24-36 months
+
+37-48 months
+
+49-60 months
+
+2. Exploratory Analysis
+
+Health Status by Age Group:
+Clustered column chart to visualize health status distribution by age brackets.
+
+Nutrient Intake vs BMI:
+Average BMI by fruit and vegetable servings with a slicer for regions.
+
+Sugar & Screen Time:
+Average sugary drink consumption and screen time per health status category.
+
+Regional Differences:
+Average BMI and fruit servings compared across regions
+
+3. Dashboard Creation
+
+A dynamic Excel dashboard was created with:
+
+Health Status by Age Group chart
+
+Nutrient vs BMI Piechart
+
+Sugar & Screen Time bar chart
+
+Regional comparison chart
+
+Interactive Features:
+
+Slicers for Gender, Health_Status and regions to allow real-time filtering.
+
+4. Executive Summary
+
+Key Findings:
+
+Strong correlation between low vegetable intake and higher BMI.
+
+Overweight and obese children consume more sugary drinks and spend more time on screens.
+
+Certain regions show significant disparities in fruit consumption and BMI levels.
+
+How to Use
+
+Download and open Child_Health_Analysis.xlsx in Excel.
+
+Navigate to the Dashboard sheet.
+
+Use slicers for Gender,Health_Status and Region to dynamically explore insights.
+
+Review the Summary sheet for recommendations.
+
+Tools Used
+
+Excel Features:
+PivotTables, PivotCharts, Slicers, Conditional Formatting, Data Validation
+
+Visualization:
+Clean, modern charts for storytelling
+
+Key Insights
+
+Increasing fruit and vegetable intake is strongly associated with maintaining a healthy BMI.
+
+Reducing sugary drink consumption and screen time may significantly lower the risk of obesity.
+
+Certain regions need targeted interventions due to high BMI and low fruit intake.
+
+Recommendations
+
+Region B should be prioritized for campaigns to reduce sugary drink consumption.
+
+Increase access to fresh fruits and vegetables for children aged 37–60 months.
+
+Encourage screen-time management programs during pediatric health visits.
