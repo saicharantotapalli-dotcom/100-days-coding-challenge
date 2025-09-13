@@ -1,0 +1,119 @@
+🌱 Healthy Kids Nutrition & Growth Analysis
+📖 Overview
+
+This project analyzes the relationship between children's dietary habits and their physical development (BMI) using a realistic dataset.
+The goal is to identify key trends and correlations to inform public health campaigns and interventions by Healthy Futures.
+
+📂 Dataset
+
+File: Child_Health_Data.csv
+
+Column Name	Description
+🆔 ChildID	Unique identifier for each child
+🍼 Age_Months	Age in months (24–72 months)
+🚻 Gender	Male / Female
+📏 Height_cm	Height in centimeters
+⚖️ Weight_kg	Weight in kilograms
+🍎 Daily_Fruit_Servings	Average daily fruit servings
+🥦 Daily_Veggie_Servings	Average daily vegetable servings
+🥤 Daily_Sugar_Drinks	Average daily sugary drinks
+📱 ScreenTime_Hours	Average daily screen time (hours)
+🌍 Region	Geographic region of residence
+🧹 Step 1: Data Cleaning
+
+✅ Converted raw data into an Excel Table for easy management.
+
+➕ Added calculated columns:
+
+BMI Formula:
+
+𝐵𝑀𝐼=𝑊𝑒i𝑔ℎ𝑡(𝑘𝑔)(𝐻𝑒𝑖𝑔ℎ𝑡(𝑐𝑚)/100)2
+BMI=(Height(cm)/100)2 Weight(kg)
+	​
+
+Health_Status based on BMI:
+
+🟢 Underweight: BMI < 18.5
+
+🟡 Healthy Weight: 18.5 ≤ BMI < 25.0
+
+🟠 Overweight: 25.0 ≤ BMI < 30.0
+
+🔴 Obese: BMI ≥ 30.0
+
+📊 Added Age_Group Buckets:
+
+24–36 months
+
+37–48 months
+
+49–60 months
+
+🔍 Step 2: Exploratory Analysis
+Analysis	Description	Visualization
+Health Status by Age Group	Understand the distribution of health status across age ranges	📊 Clustered Column Chart
+Nutrient Intake vs BMI	Compare average BMI across fruit & vegetable intake levels	🌈 Heatmap with Region Slicer
+Sugar & Screen Time	Track sugary drink consumption & screen time by health status	📉 Bar Chart
+Regional Differences	Identify regional disparities in BMI and fruit servings	🗺️ Conditional Formatting Table
+📊 Step 3: Dashboard Creation
+
+The interactive dashboard contains:
+
+Charts:
+
+🍼 Health Status by Age Group
+
+🍎 Nutrient vs BMI Pie Chart
+
+🥤 Sugar & Screen Time correlation
+
+🌍 Regional comparison
+
+Slicers:
+
+🚻 Gender
+
+⚖️ Health Status
+
+The dashboard allows dynamic filtering for deeper exploration.
+
+📝 Executive Summary
+Key Findings
+
+🥦 Low vegetable intake correlates with higher BMI.
+
+🥤 Sugary drinks and excessive screen time are linked to obesity.
+
+🌍 Some regions show significant disparities in fruit consumption and BMI levels.
+
+🛠️ Tools Used
+
+Excel Features: PivotTables, PivotCharts, Slicers, Conditional Formatting, Data Validation 📈
+
+Visualization Style: Clear, modern, and professional 🎨
+
+💡 Insights
+
+🍎 Increasing fruit & veggie intake supports healthy BMI maintenance.
+
+🥤 Cutting sugary drinks reduces risk of overweight/obesity.
+
+🌍 Targeted regional interventions are needed to address disparities.
+
+🎯 Recommendations
+
+🌟 Region B should receive priority campaigns to reduce sugary drink consumption.
+
+🥗 Increase access to fresh fruits and vegetables, especially for children aged 37–60 months.
+
+📱 Encourage screen-time management programs at schools and pediatric clinics.
+
+🚀 How to Use
+
+Download and open Child_Health_Analysis.xlsx.
+
+Go to the Dashboard sheet.
+
+Use slicers to filter data dynamically by Gender or Health_Status.
+
+Review Summary sheet for actionable insights.
