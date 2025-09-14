@@ -1,0 +1,133 @@
+
+## 🔍 Project Overview
+This project provides an end-to-end **loan portfolio analysis** for a bank to assess credit risk, identify trends, and make **data-driven lending decisions**.
+
+The project covers:
+- 📈 **Credit Risk Assessment** – Identify risky borrowers and geographic concentrations.  
+- 🧮 **KPI Calculations** – LTV, DTI, Profit/Loss, and more.  
+- 🖥️ **Interactive Excel Dashboard** – Dynamic visual insights for decision-makers.  
+- 🔮 **Scenario & Sensitivity Analysis** – Model different economic conditions.  
+
+> **Goal:** Improve portfolio health, increase profitability, and reduce default rates.
+
+---
+
+## 🗂️ Repository Structure
+loan-portfolio-analysis/
+│
+├── data/
+│ └── banking_loan_data.csv # Raw input data
+│
+├── analysis/
+│ └── Banking_Loan_Analysis_Real.xlsx # Cleaned data, KPIs, and scenarios
+│
+├── dashboard/
+│ └── LOAN_PORTFOLIO_DASHBOARD.png # Dashboard snapshot
+│
+└── README.md # Documentation
+
+yaml
+Copy code
+
+---
+
+## 🧹 Data Cleaning & Preparation
+### Steps Taken:
+- ✅ Removed duplicate and invalid records.  
+- 🔧 Standardized **date formats** and **loan status labels**.  
+- 🧾 Filled missing values:
+  - Default **LTV = 0.8** if not provided.  
+  - **Annual income** imputed using median value.  
+  - Interest rates fixed where values >1 (e.g., 12 → 0.12).
+- 📊 Added calculated KPI fields:
+  - **Loan-to-Value (LTV)** = Loan Amount ÷ Collateral Value  
+  - **Debt-to-Income (DTI)** = (Monthly Debt ÷ Monthly Income) × 100  
+  - **Months on Book** = Today – Loan Issue Date  
+  - **Profit/Loss** = Interest Collected – Charge-offs + Recoveries  
+
+---
+
+## 🧮 KPI Metrics
+| KPI | Description | Purpose |
+|-----|-------------|---------|
+| 💰 **Total Funded Amount** | Total disbursed loan value | Measures portfolio size |
+| ⚠️ **Default Rate** | Defaults ÷ Total Loans × 100 | Monitors credit risk |
+| 🔢 **Average Interest Rate** | Mean of all issued loan interest rates | Tracks loan pricing |
+| 📉 **Profit/Loss** | Interest income – charge-offs + recoveries | Assesses portfolio profitability |
+| 📊 **Active Loans** | Total current unpaid loans | Gauges exposure |
+
+---
+
+## 🖥️ Dashboard Highlights
+The dashboard provides **interactive visuals** for portfolio monitoring.
+
+### **Features:**
+- **Top KPI Cards**: 💰 Funded Amount | ⚠️ Default Rate | 📉 Profit/Loss | 🔢 Avg Interest Rate  
+- **Visual Charts**:
+  - 📈 **Monthly Trends** – Loan amounts & counts over time  
+  - 🥧 **Loan Status Breakdown** – Fully Paid, Current, Charged Off  
+  - 📊 **Loan Grade Distribution** – A to G loan grades  
+  - 🗺️ **Geographic Default Map** – Identify high-risk states  
+- **Interactive Filters (Slicers):**
+  - Loan Status | Loan Grade | State | Date
+
+---
+
+## 🔮 Scenario Analysis
+Used Excel's **Scenario Manager** to simulate different economic conditions.
+
+| Scenario | 🌞 Optimistic | 🌩️ Pessimistic |
+|-----------|--------------|----------------|
+| **Default Rate Change** | -5% | +15% |
+| **Interest Rate Change** | +10% | -5% |
+
+- 🌞 **Optimistic:** Lower defaults and higher rates increase portfolio profitability.  
+- 🌩️ **Pessimistic:** Higher defaults combined with lower interest rates lead to potential losses.
+
+---
+
+## 📊 Sensitivity Analysis
+A **two-variable Data Table** shows how total profit varies when:
+- **Default Rate**: 5% → 20%  
+- **Interest Rate**: 7% → 12%
+
+> Helps identify **tipping points** where profit turns negative.
+
+---
+
+## 📌 Key Insights
+- ⚠️ **Current Default Rate = 8.7%** → Requires improvement.  
+- B & C grade loans form the **bulk of portfolio**, with higher default risk.  
+- States with **>12% default rate** need targeted recovery strategies.  
+- Portfolio profitability is **highly sensitive to default rates**.
+
+---
+
+## 📝 Recommendations
+- 🏦 Focus lending on **A & B grade borrowers** to reduce risk.  
+- 💼 Strengthen **collections & recovery** in high-default states.  
+- 📉 Reduce exposure to **low-grade loans (E, F, G)**.  
+- 🔧 Implement **risk-based pricing** to match interest rates with risk levels.  
+- 🔄 Regularly perform **stress testing** using updated scenarios.
+
+---
+
+## 🛠️ Tools & Technologies
+| Excel 📊 | Dashboard, PivotTables, Goal Seek, Scenario Manager |
+
+---
+
+## 🚀 How to Run
+Open the Excel file:
+
+Navigate to analysis/Banking_Loan_Analysis_Real.xlsx
+
+Go to the Dashboard sheet to explore data interactively.
+
+Adjust variables in Scenario Manager or Data Table to model new situations.
+
+🌟 Dashboard Preview
+
+👤 Author
+Sai Charan Kumar Totapalli
+Data Analyst | Credit Risk Specialist
