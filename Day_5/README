@@ -1,0 +1,101 @@
+📊 IT Help Desk Ticket Analysis
+📝 Overview
+
+The IT Help Desk Ticket Analysis project provides actionable insights into IT support operations by analyzing historical help desk ticket data.
+
+The primary goals are:
+
+🔍 Identify recurring problems.
+
+⏱ Optimize ticket resolution times.
+
+👨‍💻 Evaluate analyst performance.
+
+🎯 Provide data-driven recommendations to management.
+
+This helps the IT team reduce recurring issues, allocate resources efficiently, and improve customer satisfaction.
+
+📂 Dataset
+
+File: help_desk_tickets.csv
+
+Column Name	Description
+🆔 ticket_id	Unique identifier for each ticket
+🗓 submission_date	Date & time when the ticket was created
+✅ resolution_date	Date & time when the ticket was resolved
+📂 category	Type of issue (e.g., Network, Software, Hardware, Access)
+👨‍💻 assigned_analyst	IT analyst assigned to resolve the ticket
+💬 description	User-provided problem description
+⚡ priority	Ticket urgency level (Low, Medium, High, Critical)
+⚙️ Steps Performed
+1. Data Preparation
+
+Added calculated fields:
+
+⏱ Resolution_Time_Hours = Time taken to resolve each ticket in hours.
+
+📆 Day_of_Week, Month, Hour_of_Day = Derived from submission_date.
+
+🏷 Keyword = Extracted from ticket description using the following keyword list:
+
+password, vpn, network, email, printer, access, wifi, drive, installation, login, laptop's, sign, Others
+
+2. Analysis Conducted
+Area	Purpose
+📈 Ticket Volume Trends	Identify ticket spikes by day, month, and hour
+⏳ Resolution Time Metrics	Average time to resolve tickets by category & priority
+🔑 Top Problems & Root Causes	Identify most common keywords in descriptions
+🧑‍💻 Analyst Performance	Track top performers & those needing training
+3. Pivot Tables & Dashboard
+
+Built interactive pivot tables to analyze:
+
+Category Trends 📂
+
+Priority Distribution ⚡
+
+Analyst Performance 👨‍💻
+
+Keyword Frequency 🔑
+
+Added charts for clear visual storytelling.
+
+🗂 Excel Workbook Structure
+
+The final report is delivered in Excel format with four sheets:
+
+Sheet Name	Icon	Purpose
+Summary Dashboard	📊	Key KPIs, charts, and pivot tables
+Data & Calculations	📑	Raw data + calculated columns
+Detailed Analysis	🔬	Deep-dive tables for each analysis area
+Recommendations	💡	Actionable steps for management
+🧮 Example Excel Formulas
+Field	Formula
+Resolution Time (Hours)	=(Resolution_Date - Submission_Date) * 24
+Day of Week	=TEXT(Submission_Date, "dddd")
+Month	=TEXT(Submission_Date, "yyyy-mm")
+Hour of Day	=HOUR(Submission_Date)
+Keyword Extraction	=IF(ISNUMBER(SEARCH("password",C2)),"password", IF(ISNUMBER(SEARCH("vpn",C2)),"vpn", IF(ISNUMBER(SEARCH("network",C2)),"network","other")))
+💡 Recommendations
+
+Based on the analysis:
+
+🔐 Automate password resets to reduce Access tickets.
+
+🌐 Assign specialized analysts to frequent Network and VPN issues.
+
+⏰ Schedule extra staffing during identified peak hours.
+
+📘 Create knowledge base articles for recurring issues like printer and email problems.
+
+📊 Continuously monitor analyst performance to ensure balanced workload.
+
+🚀 How to Use
+
+Open the Excel file: help_desk_analysis_final.xlsx.
+
+Review Summary Dashboard for a quick overview.
+
+Use Detailed Analysis to explore deeper insights.
+
+Check Recommendations to plan improvements.
