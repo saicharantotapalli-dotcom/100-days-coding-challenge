@@ -1,0 +1,111 @@
+🌾 Crop Yield Forecasting Project
+📖 Overview
+
+This project was developed for Agro-Solutions to analyze historical wheat crop data and deliver data-driven insights to farmers.
+The main goal is to forecast wheat yield and assist farmers in making informed decisions about:
+
+🌱 Planting
+
+💧 Irrigation management
+
+🌿 Fertilizer usage
+
+📊 Resource allocation
+
+📂 Files Included
+File	Description
+📘 Crop_Yield_Forecasting_Final_Report.xlsx	Main Excel workbook with Raw Data, Cleaned Data, Data Analysis, and Final Report.
+📄 Final_Report_Crop_Yield_Forecasting.pdf	Standalone PDF summary for easy sharing and printing.
+🗂 agri_data_cleaned.csv	Cleaned historical dataset used for the analysis.
+🗃 Excel Workbook Structure
+
+The Excel workbook contains 4 sheets:
+
+1️⃣ Raw Data
+
+Original dataset exactly as provided.
+
+Columns include:
+FarmID, Year, Rainfall_mm, Fertilizer_kg/ha, Pesticide_L/ha, SoilType, Yield_Tons/ha.
+
+2️⃣ Cleaned Data
+
+Standardized data with:
+
+Yield_Category:
+
+🟢 High Yield: > 5 Tons/ha
+
+🟡 Medium Yield: 3–5 Tons/ha
+
+🔴 Low Yield: < 3 Tons/ha
+
+Conditional formatting to highlight yields > 6 Tons/ha.
+
+3️⃣ Data Analysis
+
+Pivot tables and charts:
+
+Average yield by soil type.
+
+Average fertilizer usage by yield category.
+
+Yearly yield trends by soil type.
+
+Includes a clustered column chart comparing:
+
+🌾 Average Yield vs. 💊 Average Fertilizer by soil type.
+
+4️⃣ Final Report
+
+A professional executive summary with:
+
+🌱 Most productive soil type.
+
+📊 Fertilizer vs yield relationship.
+
+🌧 Other influential variables like rainfall and temperature.
+
+✅ Actionable recommendations for farmers.
+
+🌟 Key Insights
+
+Loam soil consistently produced the highest average yields.
+
+Higher fertilizer amounts increase yields, but diminishing returns occur beyond a threshold.
+
+Rainfall plays a critical role, while temperature has a moderate effect.
+
+🛠 How to Use
+
+Excel Workbook
+
+Open Crop_Yield_Forecasting_Final_Report.xlsx in Microsoft Excel.
+
+Navigate through sheets:
+
+Final Report → For summary insights.
+
+Data Analysis → Explore pivots and charts.
+
+Cleaned Data → Review processed dataset.
+
+PDF File
+
+View or print Final_Report_Crop_Yield_Forecasting.pdf to share insights with stakeholders.
+
+🚀 Improvements
+
+Build a predictive machine learning model to forecast wheat yields.
+
+Create interactive Excel dashboards with slicers and filters.
+
+👤 Contact
+
+For questions, improvements, or collaboration:
+
+Company: Agro-Solutions
+
+Role: Data Analyst
+
+Prepared by: Sai Charan Kumar Totapalli
