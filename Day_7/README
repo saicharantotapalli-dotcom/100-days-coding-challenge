@@ -1,0 +1,128 @@
+🌐 Overview
+
+This project analyzes user engagement on a fictional social media platform, ConnectHub.
+The workflow demonstrates Excel for data cleaning, analysis, visualization, and dashboard creation.
+
+🎯 Goal: Transform raw social media data into actionable business insights.
+
+📂 Dataset Structure
+Sheet Name	📘 Description
+👤 Users	User profile data like User_ID, Username, Email, Join_Date, and City.
+📝 Posts	Posts created by users, including content length and posting date.
+❤️ Likes	Records of likes by users on posts.
+💬 Comments	Comments activity with text and date.
+🤝 Friendships	Friendship relationships and their start dates.
+🗂 Sample Data
+
+Users Table:
+
+User_ID	Username	Email	Join_Date	City
+1	alex_123	alex@example.com
+	2023-01-15	New York
+2	sara_k	sara@example.com
+	2023-02-20	Chicago
+
+Posts Table:
+
+Post_ID	User_ID	Content_Length (words)	Post_Date
+101	1	45	2023-05-01
+102	2	120	2023-05-02
+🗃 Project Workflow
+Task 1: 🧹 Data Cleaning & Preparation
+
+✂ Extracted email domains from Email column.
+
+📆 Formatted Join_Date → MMM-YYYY.
+
+🔁 Removed duplicate users.
+
+🌍 Split City, Country into two columns using Text-to-Columns.
+
+📄 Output Sheet: Users_Cleaned
+
+Task 2: 🔢 Formulas & Functions
+⚙ Task	📐 Excel Formula Used	📝 Output
+Count user posts	=COUNTIF(Posts!B:B,[@User_ID])	Num_Posts
+
+Average content length	=AVERAGEIF(Posts!B:B,[@User_ID],Posts!C:C)	Avg_Content_Length
+
+Most active user	SUM of Likes + Comments	Top5_Users
+
+Fetch commenter username	=XLOOKUP([@User_ID],Users!A:A,Users!B:B)	Comments_With_User
+
+Friendship duration (months)	=DATEDIF([@Since_Date],TODAY(),"M")	Friendships
+
+Task 3: 📊 Pivot Tables & Charts
+
+Post Engagement Summary – total likes & comments per post.
+
+Top 5 Most Liked Posts – 📈 Column Chart.
+
+City-Wise Activity – user engagement by city.
+
+Engagement Trends Over Time – line chart with a timeline slicer.
+
+📌 Generated Charts:
+
+🏆 charts/top5_liked.png → Top 5 most liked posts
+
+🏙 charts/city_pie.png → City-wise user distribution
+
+📆 charts/engagement_trend.png → Engagement trend over time
+
+📊 charts/posts_vs_likes.png → Posts vs Likes comparison
+
+Task 4: 🎨 Conditional Formatting
+🖌 Rule	💡 Condition
+Users joined before Jan 2023	Highlight light red
+Posts with > 100 words	Highlight green
+Top 3 most liked posts	Highlight gold
+Task 5: 📈 Interactive Dashboard
+
+Your dashboard includes:
+
+KPIs:
+
+👥 Total Users
+
+📝 Total Posts
+
+❤️ Total Likes
+
+💬 Total Comments
+
+Top 5 Active Users – bar chart
+
+Engagement Trend – line chart
+
+City Distribution – pie chart
+
+Timeline Slicer for dynamic filtering by post date
+
+📁 Folder Structure
+ConnectHub_Analysis/
+│
+├── social_media_challenge_output.xlsx    # Cleaned & analyzed Excel workbook
+│
+├── charts/                               # Visualization charts
+│   ├── top5_liked.png
+│   ├── city_pie.png
+│   ├── engagement_trend.png
+│   └── posts_vs_likes.png
+│
+└── README.md                             # Project documentation
+
+💡 Key Insights (Sample)
+
+👑 Most Active User: Found in Top5_Users sheet.
+
+🏆 Top Liked Post: Identified via Post_Engagement.
+
+🌍 City Distribution: Mumbai and New York lead in active users.
+
+🛠 Tools Used
+Tool	Purpose
+Excel 🧮	Cleaning, formulas, pivot tables, dashboard
+Power Query ⚡	Data automation & refresh
+
+Build Power BI dashboard for deeper insights.
