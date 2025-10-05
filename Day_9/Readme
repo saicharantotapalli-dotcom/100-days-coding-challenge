@@ -1,0 +1,119 @@
+Project Overview
+
+This project delivers a Quality Control Dashboard in Power BI for monitoring product defects in a manufacturing company.
+The dashboard is designed to give production managers a clear, interactive way to track defect rates, identify problematic products, and analyze performance by production lines and inspectors.
+
+Data Sources
+
+Two CSV files were provided:
+
+production_data.csv
+
+ProductID
+
+BatchID
+
+Date
+
+Status (Pass / Fail)
+
+batches_data.csv
+
+BatchID
+
+ProductionLine
+
+InspectorName
+
+Data Modeling
+
+Imported both CSVs into Power BI.
+
+Established relationship:
+
+Production[BatchID] → Batches[BatchID]
+
+Created a Merged Table (MergedData) combining production details with batch and inspector info.
+
+DAX Measures
+
+Key measures created for analysis:
+
+Total Inspected = COUNTROWS(MergedData)
+
+Defective Items =
+CALCULATE(
+    COUNTROWS(MergedData),
+    MergedData[Status] = "Fail"
+)
+
+Overall Defect Rate =
+DIVIDE([Defective Items], [Total Inspected], 0)
+
+Daily Defect Rate =
+DIVIDE(
+    CALCULATE([Defective Items]),
+    CALCULATE([Total Inspected]),
+    0
+)
+
+Passed Items = [Total Inspected] - [Defective Items]
+
+Dashboard Visuals
+
+The dashboard answers four key business questions:
+
+What is our overall defect rate?
+
+KPI Card: Overall Defect Rate (%)
+
+Which products have the highest number of defects?
+
+Clustered Bar Chart: Top 5 products by defect count
+
+Is the defect rate improving or worsening over time?
+
+Line Chart: Daily Defect Rate trend (last year)
+
+Are certain inspection batches performing worse than others?
+
+Matrix Table: Defects by Production Line & InspectorName
+
+Additional Interactivity:
+
+Date Slicer for filtering across all visuals.
+
+Visual interactions configured so selecting a product or time period filters related visuals.
+
+Dashboard Layout
+ -------------------------------------------------------
+| KPI (Overall Defect Rate) | Date Slicer              |
+ -------------------------------------------------------
+| Top 5 Products (Bar)      | Defect Trend (Line)      |
+ -------------------------------------------------------
+| Matrix: ProductionLine → InspectorName               |
+ -------------------------------------------------------
+
+Insights (Sample from Provided Data)
+
+Total inspected items: 150
+
+Total defective items: 9
+
+Overall defect rate: 6.0%
+
+Some products show higher defect concentrations.
+
+Defect trend can be tracked to see if quality is improving or declining.
+
+Certain inspectors/lines may need review if defect rates are higher.
+
+How to Use
+
+Open Quality_Control_Dashboard.pbix in Power BI Desktop.
+
+Use the date slicer to filter results by specific time ranges.
+
+Hover over visuals to see detailed tooltips (inspected vs defective counts).
+
+Drill down by clicking products or production lines to isolate defects.
