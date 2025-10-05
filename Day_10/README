@@ -1,0 +1,95 @@
+
+🧩 Project Overview
+
+This dashboard analyzes logistics and shipment performance data to help identify delays, regional efficiency, and delivery success rates.
+It provides KPIs, trends, and detailed shipment insights to support operational decisions.
+
+📂 Files Included
+File	Description
+Day10_Logistics.pbix	Power BI dashboard file
+logistics_data.xlsx / logistics_data.csv	Raw shipment dataset
+README.md	This instruction and explanation file
+Insights_Report.pdf	Optional — summary of findings and screenshots
+⚙️ Data Preparation Steps
+
+Load raw data into Power BI (Excel or CSV).
+
+Transform in Power Query:
+
+Merge Year, Month, Day into proper date columns using
+
+= #date([Order_Year], [Order_Month], [Order_Day])
+
+
+Create DeliveryTime_Days and DelayDays columns.
+
+Clean text fields (trim spaces, fix casing).
+
+Calculated Columns:
+
+DelayDays = DATEDIFF(ExpectedDate, DeliveryDate, DAY)
+
+IsOnTimeFlag (exclude cancelled shipments):
+
+IsOnTimeFlag =
+VAR _status = TRIM(LOWER('logistics_data'[DeliveryStatus]))
+VAR _delay = 'logistics_data'[DelayDays]
+RETURN
+IF(
+    _status = "cancelled" || ISBLANK(_delay),
+    0,
+    IF(_status = "on-time" || _delay <= 0, 1, 0)
+)
+
+📊 Key Measures (DAX)
+Measure	Purpose
+Total Shipments	Total unique shipments
+On-time Delivery %	% of shipments delivered on or before time
+Avg Delivery Time (Days)	Average time between order and delivery
+Delayed %	Percentage of delayed shipments
+Cancelled %	Percentage of cancelled shipments
+Total Cost	Total logistics cost
+🎨 Dashboard Layout
+Top Row – KPI Cards
+
+Total Shipments
+
+On-time Delivery %
+
+Delayed %
+
+Cancelled %
+
+Avg Delivery Time (Days)
+
+Total Cost
+
+Middle Row – Visuals
+
+Bar Chart: Avg Delivery Time by Region
+
+Heatmap: Delivery Status by City
+
+Bottom Row – Table
+
+Shipment-level details with DelayDays conditional formatting (Red = delayed, Green = on-time)
+
+Left Sidebar – Filters
+
+Region
+
+Delivery Status
+
+Order Date
+
+🧭 How to Use the Dashboard
+
+Use slicers on the left to filter by region, status, or date.
+
+Hover over visuals for tooltips and detailed insights.
+
+Click KPIs to cross-filter other visuals.
+
+Drill down on charts to view region → city-level performance.
+
+Refresh data weekly or monthly to update the visuals.
